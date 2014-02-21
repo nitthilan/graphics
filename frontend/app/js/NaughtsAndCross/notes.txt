@@ -1,0 +1,6 @@
+Ideas:
+======
+1) Using tween.js to have smooth transition for rotation
+2) Using shadows to display coins better
+3) add ai for game and levels
+4) writing unit tests for the grid calculation

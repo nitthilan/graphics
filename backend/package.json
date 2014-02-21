@@ -1,0 +1,39 @@
+{
+  "name": "devan",
+  "version": "0.0.0",
+  "description": "graphics based applications",
+  "main": "app/setup/app.js",
+  "scripts": {
+    "start": "node app/setup/main.js | node_modules/.bin/bunyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitthilan"
+  },
+  "keywords": [
+    "graphics",
+    "games",
+    "movie",
+    "maker"
+  ],
+  "author": "kjn",
+  "license": "BSD",
+  "dependencies": {
+    "mongoose": "~3.8.4",
+    "restify": "2.6.0",
+    "client-sessions": "~0.6.0",
+    "bunyan": "~0.22.1",
+    "node-restify-validation": "0.0.6",
+    "crypto": "0.0.3",
+    "emailjs": "~0.3.6",
+    "socket.io": "~0.9.16",
+    "cookie": "~0.1.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.13.0"
+  },
+  "engines": {
+    "node": "0.10.2",
+    "npm": "1.2.15"
+  }
+}

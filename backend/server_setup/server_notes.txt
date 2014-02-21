@@ -1,0 +1,11 @@
+Server Settings: 512 MB memory
+
+Network mode for accessing through putty:
+	- Network Adapters => Bridged Adapter => Select one of the ethernet connections on the host
+
+Installing ngix:
+	- http://joedoyle.us/getting-started-with-nodejs-and-nginx
+	- http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/
+		- upstart, winston, forever
+
+Some shutdown commands: shutdown now -P

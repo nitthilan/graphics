@@ -1,0 +1,78 @@
+<!-- Left Subscription Navigation -->
+<div uiEvent="{ scroll : 'scrollCallBack()' }" class="container bs-docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="bs-sidebar hidden-print" role="complementary">
+        <!--Sidebar content-->
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" ng-model="feedUrl">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"  ng-click="add(feedUrl)">Add</button>
+          </span>
+        </div><!-- /input-group -->
+        <span class="label label-info">{{addFeedMessage}}</span>
+        <p></p>
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="subscription" ng-model="query">
+          <span class="input-group-addon">find</span>
+        </div>
+        <div class="input-group input-group-sm">
+          <select class="form-control" ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+          </select>
+          <span class="input-group-addon">sort</span>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" ng-click="logout()">logout</button>
+        </div>
+
+        <ul class="nav bs-sidenav">
+          <li ng-repeat="subscription in subscriptions | filter:query | orderBy:orderProp">
+          <a href ng-click=getArticle(subscription) >{{subscription.name}}</a>
+          <!-- ul class="nav">
+            <li ng-repeat="subscription in subscriptions | filter:query | orderBy:orderProp">
+            <li><a href="#overview-doctype">HTML5 doctype</a></li>
+          </ul -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <a href={{listedSubscription.siteUrl}}>
+            <h1 class="panel-title">{{listedSubscription.name}}</h2> 
+          </a>
+        </div>
+      </div>
+      <!--Body content-->
+      <ul style="list-style: none; padding:0; margin:0;">
+        <li ng-repeat="article in articles | filter:query | orderBy:orderProp">
+        <!-- Don't forget the apostrophe around the css class name - as in Jan's example <div ng-class="{'icon-check': expr}">Sample Text</div> -->
+        <div  class="panel panel-default"> <!-- ng-class="{'article-hightlight': $first}" -->
+          <div class="panel-heading">
+            <a href={{article.link}}>
+              <h4 class="panel-title">{{article.title}}</h4> 
+            </a>
+            <span class="label label-default">{{article.date}}</span>
+            <span class="label label-default">{{article.author}}</span>
+          </div>
+          <div class="panel-body">
+            <p ng-bind-html="article.description"></p>
+          </div>
+          <div class="panel-footer">
+            <div class="btn-group btn-group-xs">
+              <button type="button" class="btn btn-default">Read:{{article.isRead}}</button>
+              <button type="button" class="btn btn-default">Like</button>
+              <button type="button" class="btn btn-default">Share</button>
+            </div>
+          </div>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

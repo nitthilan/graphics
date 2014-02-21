@@ -1,0 +1,54 @@
+<!-- Mobile-friendly navbar adapted from example. -->
+<!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+<div class="row">
+<div class="navbar navbar-inverse ">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Devan</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <select class="form-control" ng-model="opponentUser" ng-options="v.email for (k,v) in activeUsers">
+            <option value="">-- Choose opponent --</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="gameOn(opponentUser)">Game On</button>
+        <span  ng-show="queryFromOpponentUser" class="label">{{queryFromOpponentUser}}</span>
+        <div class="btn-group" ng-show="queryFromOpponentUser">
+          <button type="submit" class="btn btn-success" ng-click="AcceptQuery()">Yes</button>
+          <button type="submit" class="btn btn-success" ng-click="RejectQuery()">No</button>
+        </div>
+        <div ng-show="negativeResponseFromUser" class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <strong>Warning!</strong> {{negativeResponseFromUser}}
+        </div>
+        <button type="submit" ng-show="positiveResponseFromOpponentUser" class="btn btn-success"ng-click="startGame(opponentUser)">{{positiveResponseFromOpponentUser}}</button>
+      </form>
+      <form class="navbar-form navbar-right">
+        <span class="label label-success">{{nextPlayer}} make move</span>
+        <span class="label label-success">{{errorMessage}}</span>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+<style>
+.stretchedToMargin {
+    height:400px;
+}
+</style>
+<!-- Adding tabindex for capturing keyevents: http://stackoverflow.com/questions/148361/how-can-i-give-keyboard-focus-to-a-div-and-attach-keyboard-event-handlers-to-it -->
+<div>
+<canvas ng-hide="disableEasel" class="stretchedToMargin" id="easelHandle" tabindex="0"></canvas>
+</div>
+<div ng-hide="!disableEasel" class="stretchedToMargin" id="container" tabindex="0"></div>
+</div>
+
+
+
+

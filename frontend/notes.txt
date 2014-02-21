@@ -1,0 +1,14 @@
+Probable features:
+	- usemin - to package css, html and js into a folder
+		- https://github.com/yeoman/grunt-usemin
+
+Not read yet:
+============
+optimising the delivery: 
+	- http://googlecode.blogspot.in/2009/09/gmail-for-mobile-html5-series-reducing.html
+	- https://alexsexton.com/blog/2013/03/deploying-javascript-applications/
+Chat room application:
+	- http://psitsmike.com/2011/10/node-js-and-socket-io-multiroom-chat-tutorial/
+Threejs demos:
+	- http://stemkoski.github.io/Three.js/index.html
+	- http://www.youtube.com/watch?v=OWHJa0jKJgo
